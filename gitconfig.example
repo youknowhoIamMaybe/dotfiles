@@ -1,0 +1,23 @@
+# gitconfig additions - copy the [alias] and [core] blocks you like
+
+[alias]
+    st = status -sb
+    co = checkout
+    br = branch -vv
+    lg = log --oneline --graph --all -20
+    unstage = reset HEAD --
+    last = log -1 --stat
+    amend = commit --amend --no-edit
+
+[core]
+    excludesfile = ~/.gitignore_global
+    editor = vim
+
+[diff]
+    colorMoved = zebra
+
+[merge]
+    tool = vimdiff
+
+[pull]
+    rebase = true

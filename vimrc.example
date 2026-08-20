@@ -1,0 +1,22 @@
+" Minimal vimrc that works on stock vim/nvim
+set nocompatible
+syntax on
+filetype plugin indent on
+
+set number
+set relativenumber
+set tabstop=4 shiftwidth=4 expandtab
+set autoindent
+set hlsearch incsearch
+set ignorecase smartcase
+set showcmd wildmenu
+set scrolloff=5
+set history=500
+set undofile
+
+" sane splits
+set splitbelow splitright
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-H> <C-W><C-H>
+nnoremap <C-L> <C-W><C-L>

@@ -1,0 +1,30 @@
+# Source this from ~/.bashrc
+# A few quality-of-life defaults that are safe on any machine.
+
+# History
+export HISTSIZE=10000
+export HISTFILESIZE=20000
+export HISTCONTROL=ignoreboth:erasedups
+shopt -s histappend
+
+# Prompt: user@host, cwd, git branch when in a repo (git-aware via __git_ps1 if available)
+if type __git_ps1 >/dev/null 2>&1; then
+    PS1='\u@\h \w$(__git_ps1 " (%s)")$ '
+else
+    PS1='\u@\h \w$ '
+fi
+
+# Aliases
+alias ll='ls -lahF'
+alias la='ls -A'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias grep='grep --color=auto'
+alias h='history | tail -20'
+alias untar='tar -xzf'
+
+# Ctrl+arrows word jump if readline supports it
+bind 'set completion-ignore-case on' 2>/dev/null || true
+
+# Exit from the interactive re-login annoyance
+export EDITOR=${EDITOR:-vim}
